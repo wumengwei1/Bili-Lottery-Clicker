@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Bili Lottery Clicker",
+  "version": "4.0",
+  "description": "自动打开 B 站抽奖动态页面，并显示悬浮控制面板",
+  "permissions": [
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*.bilibili.com/*"
+  ],
+  "action": {
+    "default_title": "Bili Lottery Clicker"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.bilibili.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  }
+}
